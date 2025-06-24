@@ -31,14 +31,14 @@ public class ProductController : ControllerBase
     public IActionResult Create(Product product)
     {
         _context.ExecuteNonQuerySp("CREATE", null, product.Name, product.Price);
-        return Ok("Student Created");
+        return Ok("Created");
     }
 
     [HttpPut("{id}")]
     public IActionResult Update(int id, Product product)
     {
         _context.ExecuteNonQuerySp("UPDATE", id, product.Name, product.Price);
-        return Ok("Student Updated");
+        return Ok("Updated");
     }
 
 
@@ -46,6 +46,6 @@ public class ProductController : ControllerBase
     public IActionResult Delete(int id)
     {
         _context.ExecuteNonQuerySp("DELETE", id);
-        return Ok("Student Deleted");
+        return Ok("Deleted");
     }
 }
